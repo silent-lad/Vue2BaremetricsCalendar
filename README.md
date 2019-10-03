@@ -38,42 +38,61 @@ new Vue({
 Once registered you can use the component in its default settings with as follows:-
 
 ```html
-<Calendar type="double" elementName="doubleRangePicker" />
-<Calendar type="single" elementName="singleRangePicker" />
+<Calendar
+  type="double"
+  @rangeEdit="processDateRange()"
+  elementName="doubleRangePicker"
+/>
+
+<Calendar
+  type="single"
+  @dateEdit="processDate()"
+  elementName="singleRangePicker"
+/>
 ```
 
 **REMEMBER _elementName_ is the only required prop and it should be different for each datepicker in your component**
 
 ```html
 <template>
-  <div>
-    <h3>DateRangePicker with options</h3>
-    <date-range-picker v-model="range" :options="options" />
+  <div id="app">
+    <Calendar
+      @rangeEdit="processOutput"
+      type="double"
+      elementName="otherRangePicker"
+    />
+
+    <Calendar
+      @dateEdit="processOutput"
+      type="single"
+      elementName="primaryRangePicker"
+    />
   </div>
 </template>
 
 <script>
-  import moment from "moment";
-
+  import Calendar from "./components/Calendar";
   export default {
-    data: () => ({
-      range: ["01/09/2018", "01/10/2018"],
-      options: {
-        timePicker: true,
-        startDate: moment().startOf("hour"),
-        endDate: moment()
-          .startOf("hour")
-          .add(32, "hour"),
-        locale: {
-          format: "M/DD hh:mm A"
-        }
+    components: {
+      Calendar
+    },
+    methods: {
+      processOutput(output) {
+        console.log(output);
       }
-    })
+    }
   };
 </script>
 ```
 
-### Base Calendar Props
+# Events Emitted -
+
+| Name        | Type   | Output                             | Description                      |
+| ----------- | ------ | ---------------------------------- | -------------------------------- |
+| `rangeEdit` | double | [Timestamp(begin), Timestamp(end)] | Array of start date and end date |
+| `dateEdit`  | single | Timestamp                          | Selected date Timestamp          |
+
+# Base Calendar Props
 
 - **elementName** _\*required_ `[string]`
   - jQuery DOM object of the calendar div you're working on
@@ -81,9 +100,6 @@ Once registered you can use the component in its default settings with as follow
   - The earliest date to show in the calendar
 - **latest_date** `[date YYYY-MM-DD]`
   - The latest date to show in the calendar
-- **callback** `[function]`
-  - A function for whenever a new date is saved
-  - Inside you have access to object variables like `this.earliest_date` and `this.latest_date` for doing things with your calendar's dates
 - **format** `[object]`
   - Object containing formatting strings for.. you guessed it.. formatting your dates
   ```js

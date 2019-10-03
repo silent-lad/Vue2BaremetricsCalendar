@@ -7,13 +7,21 @@
       <h3 class="heading">
         Date Range
       </h3>
-      <Calendar type="double" elementName="otherRangePicker" />
+      <Calendar
+        @rangeEdit="processOutput"
+        type="double"
+        elementName="otherRangePicker"
+      />
       <br />
       <br />
       <h3 class="heading">
         Vue Baremetrics Calendar
       </h3>
-      <Calendar type="single" elementName="primaryRangePicker" />
+      <Calendar
+        @dateEdit="processOutput"
+        type="single"
+        elementName="primaryRangePicker"
+      />
     </div>
   </div>
 </template>
@@ -22,6 +30,11 @@ import Calendar from "./components/Calendar";
 export default {
   components: {
     Calendar
+  },
+  methods: {
+    processOutput(output) {
+      console.log(output);
+    }
   }
 };
 </script>
