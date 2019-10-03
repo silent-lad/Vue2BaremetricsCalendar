@@ -1,9 +1,20 @@
 <template>
   <div id="app">
-    <Calendar type="double" elementName="otherRangePicker" />
-    <br />
-    <br />
-    <Calendar type="double" elementName="primaryRangePicker" />
+    <h1 class="heading">
+      Vue Baremetrics Calendar
+    </h1>
+    <div class="calendars">
+      <h3 class="heading">
+        Date Range Picker
+      </h3>
+      <Calendar type="double" elementName="otherRangePicker" />
+      <br />
+      <br />
+      <h3 class="heading">
+        Vue Baremetrics Calendar
+      </h3>
+      <Calendar type="single" elementName="primaryRangePicker" />
+    </div>
   </div>
 </template>
 <script>
@@ -21,17 +32,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  text-align: center;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.calendars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
