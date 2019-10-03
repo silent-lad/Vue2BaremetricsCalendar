@@ -49,12 +49,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 // import the plugin
-import DateRangePicker from "vue2-baremetrics-calendar";
+import Calendar from "vue2-baremetrics-calendar";
 
 Vue.config.productionTip = false;
 
 // use the plugin
-Vue.use(DateRangePicker);
+Vue.use(Calendar);
 
 new Vue({
   router,
