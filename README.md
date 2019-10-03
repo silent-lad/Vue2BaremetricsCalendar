@@ -29,7 +29,9 @@ Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/sile
 
 # [View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
+<p align="center">
 <img src="./demo.png">
+</p>
 
 # Installation
 
