@@ -152,60 +152,11 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style scoped>
 @import url("./Calendar.css");
 .dr-date,
 .dr-list-item,
 .dr-calendar {
   font-weight: 600;
 }
-// .dr-input {
-//   width: 350px;
-//   padding-right: 10px !important;
-//   padding-left: 20px !important;
-//   @media screen and (max-width: 500px) {
-//     width: 90vw;
-//     justify-content: center;
-//   }
-//   .dr-dates {
-//     @media screen and (max-width: 500px) {
-//       padding: 0px 5px;
-//     }
-//   }
-// }
-// .dr-calendar {
-//   width: 100% !important;
-// }
-
-// .dr-input {
-//   @media screen and (max-width: 500px) {
-//     width: 90vw;
-//     justify-content: center;
-//   }
-//   .dr-dates {
-//     @media screen and (max-width: 500px) {
-//       padding: 0px 5px !important;
-//       font-size: 12px;
-//     }
-//   }
-// }
-// .daterange .dr-selections .dr-list-item {
-//   -webkit-box-align: start;
-//   -ms-flex-align: start;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   padding: 0.75rem 0.625rem;
-//   border-bottom: 1px solid #f7f7fc;
-//   cursor: pointer;
-//   white-space: nowrap;
-// }
-// .daterange .dr-selections {
-//   width: 350px;
-//   @media screen and (max-width: 500px) {
-//     width: 90vw;
-//   }
-// }
-// .dr-item-aside {
-//   margin-left: 0 !important;
-// }
 </style>
