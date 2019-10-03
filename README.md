@@ -8,7 +8,7 @@ The Vue-Baremetrics date range picker is a simplified solution for selecting bot
 
 Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/silent-lad)
 
-[View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
+# [View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
 ## Usage
 
