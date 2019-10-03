@@ -1,9 +1,10 @@
 <h1 align="center">Vue Baremetrics Calendar</h1>
+
 <p align="center">
 
 <img src="https://img.shields.io/badge/made%20by-silentlad-blue.svg" >
 
-<img src="https://img.shields.io/npm/v/vue2-baremetrics-calendar>
+<img src="https://img.shields.io/npm/v/vue2-baremetrics-calendar">
 
 <img src="https://img.shields.io/badge/vue-2.6.10-green.svg">
 
