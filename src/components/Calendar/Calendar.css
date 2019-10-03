@@ -1,3 +1,9 @@
+.dr-date,
+.dr-list-item,
+.dr-calendar {
+  font-weight: 600;
+}
+
 .daterange {
   position: relative;
 }

@@ -154,9 +154,4 @@ export default {
 
 <style scoped>
 @import url("./Calendar.css");
-.dr-date,
-.dr-list-item,
-.dr-calendar {
-  font-weight: 600;
-}
 </style>
