@@ -1,13 +1,26 @@
 {
   "name": "vue2-baremetrics-calendar",
   "version": "0.1.0",
-  "private": true,
+  "main": "./dist/vue2-baremetrics-calendar.common.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue2-baremetrics-calendar ./src/components/Calendar/index.js"
   },
   "dependencies": {
+    "baremetrics-calendar": "^1.0.14",
     "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },

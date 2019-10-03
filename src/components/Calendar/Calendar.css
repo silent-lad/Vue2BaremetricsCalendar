@@ -1,0 +1,383 @@
+.daterange {
+  position: relative;
+}
+
+.daterange * {
+  box-sizing: border-box;
+}
+
+.daterange div,
+.daterange span,
+.daterange ul,
+.daterange li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.daterange ul {
+  list-style: none;
+}
+
+.daterange.dr-active {
+  z-index: 10;
+}
+
+.daterange .dr-input {
+  display: flex;
+  box-shadow: 0 2px 8px #0f3a831a;
+  border-radius: 6px;
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  height: 40px;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.daterange .dr-input .dr-dates {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem 0 0.9375rem;
+  font-weight: 500;
+}
+
+.daterange .dr-input .dr-dates .dr-date {
+  font-size: 0.9375rem;
+  padding: 0.65625rem 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+}
+
+.daterange .dr-input .dr-dates .dr-date:hover,
+.daterange .dr-input .dr-dates .dr-date:focus,
+.daterange .dr-input .dr-dates .dr-date.dr-active {
+  color: #0f3a83;
+}
+
+.daterange .dr-input .dr-dates .dr-date:empty:after {
+  content: attr(placeholder);
+  color: #ddddf9;
+}
+
+.daterange .dr-input .dr-dates .dr-dates-dash {
+  color: #b8b8d9;
+  padding: 0 10px;
+  flex-grow: 0;
+  font-weight: 600;
+}
+
+.daterange .dr-input .dr-presets {
+  width: 3.125rem;
+  border-left: 1px solid #e6e6ff;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.daterange .dr-input .dr-presets:hover .dr-preset-bar,
+.daterange .dr-input .dr-presets.dr-active .dr-preset-bar {
+  background-color: #0f3a83;
+}
+
+.daterange .dr-input .dr-presets .dr-preset-bar {
+  height: 2px;
+  background-color: #5454ad;
+  margin: 2px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30%;
+}
+
+.daterange .dr-input .dr-presets .dr-preset-bar:nth-child(1),
+.daterange .dr-input .dr-presets .dr-preset-bar:nth-child(3) {
+  width: 35%;
+}
+
+.daterange .dr-input .dr-presets .dr-preset-bar:nth-child(2) {
+  width: 20%;
+}
+
+.daterange .dr-selections {
+  position: absolute;
+  /* width: 100%; */
+}
+
+.daterange .dr-selections .dr-calendar {
+  background-color: #fff;
+  font-size: 0.9375rem;
+  box-shadow: 0 2px 8px rgba(41, 41, 64, 0.1);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.2s;
+  z-index: 4;
+  top: 5px;
+  min-width: 210px;
+  width: 100%;
+}
+
+.daterange .dr-selections .dr-calendar .dr-range-switcher {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-switcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(230, 230, 255, 0.5);
+  border-radius: 4px;
+  height: 1.5625rem;
+}
+
+.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-switcher i {
+  color: #e6e6ff;
+  position: relative;
+  top: -1px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  height: 100%;
+  width: 20px;
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i:hover:before,
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i:hover:after {
+  background-color: #0f3a83;
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i.dr-disabled {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-switcher i:before,
+.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-switcher i:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 2px;
+  background-color: #e6e6ff;
+  border-radius: 1px;
+  left: 50%;
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i.dr-left:before {
+  top: calc(50% - 2px);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i.dr-left:after {
+  top: calc(50% + 2px);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i.dr-right:before {
+  top: calc(50% - 2px);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-range-switcher
+  .dr-switcher
+  i.dr-right:after {
+  top: calc(50% + 2px);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-month-switcher {
+  width: 100%;
+  margin-right: 0.375rem;
+}
+
+.daterange .dr-selections .dr-calendar .dr-range-switcher .dr-year-switcher {
+  min-width: 80px;
+}
+
+.daterange .dr-selections .dr-calendar .dr-days-of-week-list {
+  display: flex;
+  background-color: #f7f7fc;
+  font-size: 0.625rem;
+  color: #b8b8d9;
+  padding: 0.3125rem 0;
+  border: 1px solid rgba(230, 230, 255, 0.5);
+  border-left: none;
+  border-right: none;
+}
+
+.daterange .dr-selections .dr-calendar .dr-days-of-week-list .dr-day-of-week {
+  width: 14.28%;
+  text-align: center;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9375rem;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-day {
+  padding: 0.3125rem;
+  text-align: center;
+  width: 14.28%;
+  cursor: pointer;
+  color: #33334f;
+}
+
+.daterange
+  .dr-selections
+  .dr-calendar
+  .dr-day-list
+  .dr-day.dr-hover:not(.dr-current) {
+  background-color: #f7f7fc !important;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-day.dr-hover-before {
+  border-left: 2px solid #0f3a83 !important;
+  border-radius: 2px 0 0 2px;
+  padding-left: 0.1875rem !important;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-day.dr-hover-after {
+  border-right: 2px solid #0f3a83 !important;
+  border-radius: 0 2px 2px 0;
+  padding-right: 0.1875rem !important;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-selected,
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-start,
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-end {
+  background-color: #f7f7fc;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-maybe {
+  background-color: #f7f7fc !important;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-fade {
+  color: #e6e6ff;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-start {
+  border-left: 2px solid #0f3a83;
+  border-radius: 2px 0 0 2px;
+  padding-left: 0.1875rem;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-end {
+  border-right: 2px solid #0f3a83;
+  border-radius: 0 2px 2px 0;
+  padding-right: 0.1875rem;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-current {
+  color: #0f3a83 !important;
+  background-color: rgba(96, 120, 255, 0.2) !important;
+}
+
+.daterange .dr-selections .dr-calendar .dr-day-list .dr-outside {
+  pointer-events: none;
+  cursor: default;
+  color: rgba(230, 230, 255, 0.5);
+}
+
+.daterange .dr-selections .dr-preset-list {
+  background-color: #fff;
+  color: #0f3a83;
+  font-size: 0.9375rem;
+  box-shadow: 0 2px 8px rgba(41, 41, 64, 0.1);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+  top: 5px;
+  min-width: 210px;
+  width: 100%;
+}
+
+.daterange .dr-selections .dr-list-item {
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem 0.625rem;
+  border-bottom: 1px solid #f7f7fc;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.daterange .dr-selections .dr-list-item:hover {
+  background-color: #f7f7fc;
+}
+
+.daterange .dr-selections .dr-list-item .dr-item-aside {
+  color: #b8b8d9;
+  font-size: 0.75rem;
+  margin-left: 0.3125rem;
+  position: relative;
+  top: -1px;
+}
+
+.daterange--single .dr-input {
+  cursor: text;
+}
+
+.daterange--single .dr-input .dr-dates {
+  padding: 0;
+  min-width: 160px;
+  width: 100%;
+  font-weight: 900 !important;
+}
+
+.daterange--single .dr-input .dr-dates .dr-date {
+  width: 100%;
+  padding: 0.65625rem 0.75rem;
+  text-align: left;
+  color: #33334f;
+}
