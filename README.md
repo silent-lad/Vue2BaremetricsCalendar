@@ -1,56 +1,81 @@
-# [Vue2 Baremetrics Calendar]()
+<h1 style="width:100%;text-align:center;">Vue Baremetrics Calendar</h1>
 
 _A Vue.js wrapper for the beautiful date-range picker made by the **[Baremetrics](https://baremetrics.com)** team._
 
 ---
 
-The Vue-Baremetrics date range picker is a simplified solution for selecting both date ranges and single dates all from a single calender view. There aren't a billion options but the code is pretty basic and modular so feel free to edit however to meet your own needs.
+The Vue-Baremetrics date range picker is a simplified solution for selecting both date ranges and single dates all from a single calender view. With a revamped minimalistic redesign.
 
-Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/silent-lad)
-Design by [Chris Meeks](https://dribbble.com/ChrisMeeks)  
-Code by [Tyler van der Hoeven](https://github.com/tyvdh)
+Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/silent-lad)
 
-<!-- [View a demo](http://baremetrics.github.io/calendar/)
-[View in a live production app](https://demo.baremetrics.com/) -->
+[View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
-## Installing
+## Usage
 
-Using the date picker is pretty simple, you've just got to make a couple choices and include a couple settings.
-Create a div with a `daterange` class and then either the `daterange--double` or `daterange--single` classname for targeting the specific calendar you'd like to generate.
+### Global Usage
 
-```html
-<div class="daterange daterange--double"></div>
-<div class="daterange daterange--single"></div>
-```
-
-Next you've just gotta create a `new Calendar` instance.
+Global Registeration via Vue.use() method.
 
 ```js
-new Calendar({
-  element: $(".daterange--single"),
-  current_date: "2015-06-15",
-  format: { input: "M/D/YYYY" },
-  required: false
-});
+// main.js
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+// import the plugin
+import DateRangePicker from "vue2-baremetrics-calendar";
 
-new Calendar({
-  element: $(".daterange--double"),
-  earliest_date: "2000-01-1",
-  latest_date: moment(),
-  start_date: "2015-05-01",
-  end_date: "2015-05-31",
-  callback: function() {
-    var start = moment(this.start_date).format("ll"),
-      end = moment(this.end_date).format("ll");
+Vue.config.productionTip = false;
 
-    console.debug("Start Date: " + start + "\nEnd Date: " + end);
-  }
-});
+// use the plugin
+Vue.use(DateRangePicker);
+
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount("#app");
 ```
 
-### Base Calendar Params
+Once registered you can use the component in its default settings with as follows:-
 
-- **element** _\*required_ `[jQuery DOM object]`
+```html
+<Calendar type="double" elementName="doubleRangePicker" />
+<Calendar type="single" elementName="singleRangePicker" />
+```
+
+**REMEMBER _elementName_ is the only required prop and it should be different for each datepicker in your component**
+
+```html
+<template>
+  <div>
+    <h3>DateRangePicker with options</h3>
+    <date-range-picker v-model="range" :options="options" />
+  </div>
+</template>
+
+<script>
+  import moment from "moment";
+
+  export default {
+    data: () => ({
+      range: ["01/09/2018", "01/10/2018"],
+      options: {
+        timePicker: true,
+        startDate: moment().startOf("hour"),
+        endDate: moment()
+          .startOf("hour")
+          .add(32, "hour"),
+        locale: {
+          format: "M/DD hh:mm A"
+        }
+      }
+    })
+  };
+</script>
+```
+
+### Base Calendar Props
+
+- **elementName** _\*required_ `[string]`
   - jQuery DOM object of the calendar div you're working on
 - **earliest_date** `[date YYYY-MM-DD]`
   - The earliest date to show in the calendar
@@ -74,7 +99,7 @@ new Calendar({
   days_array: ["S", "M", "T", "W", "T", "F", "S"];
   ```
 
-### Single Calendar Params
+### Single Calendar Props
 
 - **current_date** `[date YYYY-MM-DD]`
   - The date to start the calendar on
@@ -83,7 +108,7 @@ new Calendar({
 - **placeholder** `[string]`
   - Set placeholder text (note this will only apply if the required key is set to `false`). The default will be whatever moment date format you're using. (i.e. 'M/D/YYYY')
 
-### Double Calendar Params
+### Double Calendar Props
 
 - **start_date** `[date YYYY-MM-DD]`
   - The date to start the selection on for the calendar
@@ -118,22 +143,3 @@ new Calendar({
     }
   ];
   ```
-
----
-
-## Developing
-
-I've included my signature gulpfile too so be sure and take a look at that as well.
-
-```bash
-$ cd <project directory>
-$ npm install
-$ gulp
-```
-
-I also use [pow](http://pow.cx/) and the [powder gem](https://github.com/Rodreegez/powder) to run my local dev environments but however you plan on wrangling that the gulpfile turns on a livereload server so as long as you have the files serving somehow any changes you make will show up instantly.
-
-## Dependencies
-
-- [jQuery](https://jquery.com/)
-- [MomentJS](http://momentjs.com/)

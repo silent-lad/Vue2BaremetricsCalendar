@@ -5,7 +5,7 @@
     </h1>
     <div class="calendars">
       <h3 class="heading">
-        Date Range Picker
+        Date Range
       </h3>
       <Calendar type="double" elementName="otherRangePicker" />
       <br />
