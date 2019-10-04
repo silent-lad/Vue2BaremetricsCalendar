@@ -30,7 +30,7 @@ Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/sile
 # [View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
 <p align="center">
-<img src="./demo.png">
+<img src="https://media.giphy.com/media/VFvkCMvXvlTNAGuaZm/giphy.gif">
 </p>
 
 # Installation
@@ -49,12 +49,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 // import the plugin
-import DateRangePicker from "vue2-baremetrics-calendar";
+import Calendar from "vue2-baremetrics-calendar";
 
 Vue.config.productionTip = false;
 
 // use the plugin
-Vue.use(DateRangePicker);
+Vue.use(Calendar);
 
 new Vue({
   router,
