@@ -37,5 +37,26 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silent-lad/silentlad.git"
+  },
+  "keywords": [
+    "daterange",
+    "date picker",
+    "vue",
+    "vue date",
+    "vue calendar",
+    "calendar",
+    "vue daterange picker",
+    "daterange picker",
+    "silentlad"
+  ],
+  "author": "silentlad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silent-lad/Vue2BaremetricsCalendar/issues"
+  },
+  "homepage": "https://github.com/silent-lad/Vue2BaremetricsCalendar#readme"
 }
