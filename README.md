@@ -114,10 +114,10 @@ Once registered you can use the component in its default settings with as follow
 
 # Events Emitted -
 
-| Name        | Type   | Output                             | Description                      |
-| ----------- | ------ | ---------------------------------- | -------------------------------- |
-| `rangeEdit` | double | [Timestamp(begin), Timestamp(end)] | Array of start date and end date |
-| `dateEdit`  | single | Timestamp                          | Selected date Timestamp          |
+| Name       | Type   | Output                             | Description                      |
+| ---------- | ------ | ---------------------------------- | -------------------------------- |
+| `dateEdit` | double | [Timestamp(begin), Timestamp(end)] | Array of start date and end date |
+| `dateEdit` | single | Timestamp                          | Selected date Timestamp          |
 
 # Base Calendar Props
 
