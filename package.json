@@ -1,6 +1,6 @@
 {
   "name": "vue2-baremetrics-calendar",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "./dist/vue2-baremetrics-calendar.common.js",
   "files": [
     "dist/*",
