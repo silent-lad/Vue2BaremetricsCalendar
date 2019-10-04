@@ -30,7 +30,7 @@ Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/sile
 # [View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
 <p align="center">
-![](https://media.giphy.com/media/VFvkCMvXvlTNAGuaZm/giphy.gif)
+<img src="https://media.giphy.com/media/VFvkCMvXvlTNAGuaZm/giphy.gif">
 </p>
 
 # Installation
