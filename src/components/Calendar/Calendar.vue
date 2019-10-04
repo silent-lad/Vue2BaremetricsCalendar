@@ -115,7 +115,7 @@ export default {
           callback: function() {
             vm.elementObject.calendarClose = this.calendarClose;
             vm.elementObject.presetClose = this.presetClose;
-            vm.$emit("rangeEdit", [
+            vm.$emit("dateEdit", [
               this.start_date.unix() * 1000,
               this.end_date.unix() * 1000
             ]);
