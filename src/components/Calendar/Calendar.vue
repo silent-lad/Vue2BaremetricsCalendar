@@ -98,6 +98,9 @@ export default {
   },
   mounted() {
     this.InitCalendar();
+    document.querySelectorAll(".dr-date").forEach(el => {
+      el.removeAttribute("contenteditable");
+    });
   },
   methods: {
     InitCalendar() {
