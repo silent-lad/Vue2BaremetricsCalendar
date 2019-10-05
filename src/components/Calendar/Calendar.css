@@ -31,7 +31,7 @@
 
 .daterange .dr-input {
   display: flex;
-  box-shadow: 0 2px 8px #0f3a8346;
+  box-shadow: 0 0px 3px rgba(15, 58, 131, 0.2);
   border-radius: 6px;
   background-color: #fff;
   position: relative;
@@ -40,30 +40,39 @@
   height: 40px;
   justify-content: space-between;
   width: fit-content;
+  transition: box-shadow 150ms ease-out;
+}
+
+.daterange .dr-input:hover, .daterange .dr-input.dr-active {
+  box-shadow: 0 1px 8px rgba(15, 58, 131, 0.2);
 }
 
 .daterange .dr-input .dr-dates {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 1rem 0 0.9375rem;
+  /* padding: 0 1rem 0 0.9375rem; */
+  padding: 0;
   font-weight: 500;
 }
 
 .daterange .dr-input .dr-dates .dr-date {
   font-size: 0.9375rem;
-  padding: 0.65625rem 0;
+  padding: 0.65625rem 1rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   outline: none;
+  transition: background 150ms ease-out;
 }
 
 .daterange .dr-input .dr-dates .dr-date:hover,
 .daterange .dr-input .dr-dates .dr-date:focus,
 .daterange .dr-input .dr-dates .dr-date.dr-active {
   color: #0f3a83;
+  background: rgba(96, 120, 255, 0.08);
+  cursor: pointer;
 }
 
 .daterange .dr-input .dr-dates .dr-date:empty:after {
@@ -73,7 +82,7 @@
 
 .daterange .dr-input .dr-dates .dr-dates-dash {
   color: #b8b8d9;
-  padding: 0 10px;
+  padding: 0 5px;
   flex-grow: 0;
   font-weight: 600;
 }
@@ -88,6 +97,12 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
+  transition: background 150ms ease-out;
+}
+
+.daterange .dr-input .dr-presets:hover,
+.daterange .dr-input .dr-presets.dr-active {
+  background-color: rgba(96, 120, 255, 0.08);
 }
 
 .daterange .dr-input .dr-presets:hover .dr-preset-bar,
@@ -122,7 +137,8 @@
 .daterange .dr-selections .dr-calendar {
   background-color: #fff;
   font-size: 0.9375rem;
-  box-shadow: 0 2px 8px rgba(41, 41, 64, 0.1);
+  box-shadow: 0 1px 8px rgba(15, 58, 131, 0.2);
+  /* box-shadow: 0 2px 15px rgba(41, 41, 64, 0.2); */
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -339,7 +355,8 @@
   background-color: #fff;
   color: #0f3a83;
   font-size: 0.9375rem;
-  box-shadow: 0 2px 8px rgba(41, 41, 64, 0.1);
+  box-shadow: 0 1px 8px rgba(15, 58, 131, 0.2);
+  /* box-shadow: 0 2px 8px rgba(41, 41, 64, 0.1); */
   border-radius: 4px;
   position: relative;
   overflow: hidden;
