@@ -122,7 +122,7 @@ Once registered you can use the component in its default settings with as follow
 # Base Calendar Props
 
 - **elementName** _\*required_ `[string]`
-  - jQuery DOM object of the calendar div you're working on
+  - DOM object of the calendar div you're working on
 - **earliest_date** `[date YYYY-MM-DD]`
   - The earliest date to show in the calendar
 - **latest_date** `[date YYYY-MM-DD]`

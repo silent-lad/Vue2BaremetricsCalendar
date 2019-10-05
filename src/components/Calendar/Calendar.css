@@ -31,7 +31,8 @@
 
 .daterange .dr-input {
   display: flex;
-  box-shadow: 0 0px 3px rgba(15, 58, 131, 0.2);
+  /* box-shadow: 0 0px 3px rgba(15, 58, 131, 0.2); */
+  box-shadow: 0 2px 8px #0f3a8346;
   border-radius: 6px;
   background-color: #fff;
   position: relative;
@@ -43,7 +44,8 @@
   transition: box-shadow 200ms ease-out;
 }
 
-.daterange .dr-input:hover, .daterange .dr-input.dr-active {
+.daterange .dr-input:hover,
+.daterange .dr-input.dr-active {
   box-shadow: 0 1px 8px rgba(15, 58, 131, 0.2);
 }
 
