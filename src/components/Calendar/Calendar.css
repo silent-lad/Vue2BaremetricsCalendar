@@ -40,7 +40,7 @@
   height: 40px;
   justify-content: space-between;
   width: fit-content;
-  transition: box-shadow 150ms ease-out;
+  transition: box-shadow 200ms ease-out;
 }
 
 .daterange .dr-input:hover, .daterange .dr-input.dr-active {
@@ -64,7 +64,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   outline: none;
-  transition: background 150ms ease-out;
+  transition: background 200ms ease-out;
 }
 
 .daterange .dr-input .dr-dates .dr-date:hover,
@@ -97,7 +97,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  transition: background 150ms ease-out;
+  transition: background 200ms ease-out;
 }
 
 .daterange .dr-input .dr-presets:hover,
