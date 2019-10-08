@@ -29,6 +29,8 @@ Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/sile
 
 # [View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
+## [NPM Package](https://npmjs.com/package/vue2-baremetrics-calendar)
+
 <p align="center">
 <img src="https://media.giphy.com/media/VFvkCMvXvlTNAGuaZm/giphy.gif">
 </p>
