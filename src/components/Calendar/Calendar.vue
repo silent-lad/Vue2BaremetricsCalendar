@@ -155,6 +155,6 @@ export default {
 </script>
 
 
-<style scoped>
-@import url("./Calendar.css");
+<style scoped lang="scss">
+@import url("./Calendar.scss");
 </style>
