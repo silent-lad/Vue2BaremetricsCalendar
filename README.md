@@ -25,7 +25,7 @@ _A Vue.js wrapper for the beautiful date-range picker made by the **[Baremetrics
 
 The Vue-Baremetrics date range picker is a simplified solution for selecting both date ranges and single dates all from a single calender view. With a revamped minimalistic redesign.
 
-Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://github.com/silent-lad)
+Redesigned and Wrapped for Vue.js by [Divyansh Tripathi](https://silentlad.com)
 
 # [View a demo](https://silent-lad.github.io/Vue2BaremetricsCalendar/#/)
 
